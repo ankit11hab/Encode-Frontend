@@ -1,49 +1,26 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { connect } from 'react-redux';
-import { addMember, getMembers } from "./actions/memberAction";
+import Dashboard from "./pages/Dashboard";
+import Members from "./pages/Members";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from "./pages/user/Login";
+import Header from "./components/Header";
+import PrivateRoute from "./utils/PrivateRoute";
 
 
-function App(props) {
-  
-  const [members,setMembers] = useState([]);
-  useEffect(async () => {
-    const data = await props.getMembers();
-    setMembers(data);
-  }, [])
-  const handleAddMember = () => {
-    const name = document.getElementById('name').value;
-    const module = document.getElementById('module').value;
-    props.addMember({'name':name,'module':module})
-  }
-  return (
-    <div className="App">
-      {members.map((member)=>{
-        return(
-          <div key={member.id}>
-            - <b>{member.name}</b>: {member.module}
-          </div>
-        )
-      })}
-      <form>
-        <b>Enter Name: </b><input id='name' type = "text"/><br/>
-        <b>Enter Module: </b><input id='module' type = "text"/><br/>
-        <button onClick = {handleAddMember} type = "button">Submit</button>
-      </form>
+function App() {
+  return(
+    <div>
+      <Router>
+        <Header/>
+        <Routes>
+            <Route exact path='/' element={<PrivateRoute/>}>
+              <Route element={<Dashboard/>} path='/' exact />
+            </Route>
+            <Route element={<Login/>} path='/login' exact />
+        </Routes>
+      </Router>
     </div>
-  );
+  )
 }
 
-const mapStateToProps = (state) => {
-  return{
-    members: state.members
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return{
-    addMember: (newMember)=>addMember(newMember,dispatch),
-    getMembers: ()=>getMembers(dispatch)
-  }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default App;
