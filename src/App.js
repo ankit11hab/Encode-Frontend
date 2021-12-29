@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from "./pages/user/Login";
 import Header from "./components/Header";
 import PrivateRoute from "./utils/PrivateRoute";
+import Register from "./pages/user/Register";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
               <Route element={<Dashboard/>} path='/' exact />
             </Route>
             <Route element={<Login/>} path='/login' exact />
+            <Route element={<Register/>} path='/register' exact />
         </Routes>
       </Router>
     </div>

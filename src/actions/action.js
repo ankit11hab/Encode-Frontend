@@ -80,3 +80,16 @@ export const loginUser = async (loginData,dispatch) => {
         return {status:false};
     }
 }
+
+export const registerUser = async (registrationData,dispatch) => {
+    try {
+        const data = await axios.post(
+            'http://localhost:8000/auth/register/',
+            registrationData
+        )
+        return data;
+    }
+    catch(error) {
+        return {status:false};
+    }
+}
