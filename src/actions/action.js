@@ -93,3 +93,16 @@ export const registerUser = async (registrationData,dispatch) => {
         return {status:false};
     }
 }
+
+export const validatePayment = async (paymentData,dispatch) => {
+    try {
+        const data = await axios.post(
+            'http://127.0.0.1:8000/payment/test/',
+            paymentData
+        )
+        return data;
+    }
+    catch(error) {
+        return {status:false};
+    }
+}
