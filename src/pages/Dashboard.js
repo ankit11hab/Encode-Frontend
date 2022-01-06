@@ -21,10 +21,11 @@ const Dashboard = (props) => {
         <div>
             <h1>Dashboard Page</h1>
             <h3>Welcome { props.user.username }!</h3>
+            <h4>Role: {props.user.isDriver?'Driver':'Passenger'}</h4>
             {notes.map((note)=>{
                 console.log(note)
                 return(
-                    <div>{note.body}</div>
+                    <div key = {note.id}>{note.body}</div>
                 )
             })}
         </div>

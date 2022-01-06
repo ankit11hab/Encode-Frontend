@@ -7,6 +7,9 @@ import Header from "./components/Header";
 import PrivateRoute from "./utils/PrivateRoute";
 import Register from "./pages/user/Register";
 import Payment from "./pages/payment/Payment";
+import PaymentHistory from "./pages/payment/PaymentHistory";
+import TicketQR from "./pages/payment/TicketQR";
+import Profile from "./pages/user/Profile";
 
 
 function App() {
@@ -16,8 +19,11 @@ function App() {
         <Header/>
         <Routes>
             <Route exact path='/' element={<PrivateRoute/>}>
-              <Route element={<Dashboard/>} path='/' exact />
+              <Route element={<Profile/>} path='/profile' exact />
+              <Route element={<Dashboard/>} path='/dashboard' exact />
               <Route element={<Payment/>} path='/purchase' exact />
+              <Route element={<PaymentHistory/>} path='/purchase/history' exact />
+              <Route element={<TicketQR/>} path='/purchase/ticket' exact />
             </Route>
             <Route element={<Login/>} path='/login' exact />
             <Route element={<Register/>} path='/register' exact />

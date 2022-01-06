@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import { validatePayment } from '../../actions/action';
+import React,{useState,useEffect} from 'react'
+import { validatePayment,getPaymentHistory } from '../../actions/action';
 import { connect } from 'react-redux';
 import { Navigate } from 'react-router-dom'
 
@@ -54,6 +54,7 @@ const Payment = (props) => {
 	}
 
 
+	
 
 
     const handlePayment = async (e) => {
@@ -74,6 +75,8 @@ const Payment = (props) => {
                 <button type="submit">Submit</button>
             </form>
             <button onClick={displayRazorpay}>Pay here</button>
+
+			
         </div>
     )
 }
@@ -86,6 +89,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+		getPaymentHistory: () => getPaymentHistory(dispatch),
         validatePayment: (paymentData) => validatePayment(paymentData, dispatch),
     }
 }

@@ -9,7 +9,7 @@ const Header = (props) => {
     }
     return (
         <div>
-            <Link to = '/'>Dashboard</Link> | <Link to = '/purchase'>Purchase</Link> | {props.isAuthenticated?<span onClick={handleLogout}>Logout</span>:<><Link to = '/login'>Login</Link> | <Link to = '/register'>Register</Link></>}
+            <Link to = '/dashboard'>Dashboard</Link> | <Link to = '/purchase'>Purchase</Link> | <Link to = '/purchase/history'>Purchase History</Link> | {props.isAuthenticated?<span onClick={handleLogout}>Logout</span>:<><Link to = '/login'>Login</Link> | <Link to = '/register'>Register</Link></>}
         </div>
     )
 }

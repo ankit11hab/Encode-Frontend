@@ -81,6 +81,25 @@ export const loginUser = async (loginData,dispatch) => {
     }
 }
 
+export const updateProfile = async (profileData,dispatch) => {
+    const config = {
+        headers: {
+            'Authorization': `Bearer ${JSON.parse(localStorage.getItem('authTokens')).access}`
+        }
+    }
+    try {
+        const data = await axios.post(
+            'http://localhost:8000/auth/profile/',
+            profileData,
+            config
+        )
+        return data;
+    }
+    catch(error) {
+        return {status:false};
+    }
+}
+
 export const registerUser = async (registrationData,dispatch) => {
     try {
         const data = await axios.post(
@@ -95,10 +114,16 @@ export const registerUser = async (registrationData,dispatch) => {
 }
 
 export const validatePayment = async (paymentData,dispatch) => {
+    const config = {
+        headers: {
+            'Authorization': `Bearer ${JSON.parse(localStorage.getItem('authTokens')).access}`
+        }
+    }
     try {
         const data = await axios.post(
             'http://127.0.0.1:8000/payment/test/',
-            paymentData
+            paymentData,
+            config
         )
         return data;
     }
@@ -106,3 +131,22 @@ export const validatePayment = async (paymentData,dispatch) => {
         return {status:false};
     }
 }
+
+export const getPaymentHistory = async (dispatch) => {
+    const config = {
+        headers: {
+            'Authorization': `Bearer ${JSON.parse(localStorage.getItem('authTokens')).access}`
+        }
+    }
+    try {
+        const data = await axios.get(
+            'http://127.0.0.1:8000/payment/history/',
+            config
+        )
+        return data;
+    }
+    catch(error) {
+        return {status:false};
+    }
+}
+
