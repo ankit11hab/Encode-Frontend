@@ -10,6 +10,7 @@ import Payment from "./pages/payment/Payment";
 import PaymentHistory from "./pages/payment/PaymentHistory";
 import TicketQR from "./pages/payment/TicketQR";
 import Profile from "./pages/user/Profile";
+import Landing from "./pages/Landing";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             </Route>
             <Route element={<Login/>} path='/login' exact />
             <Route element={<Register/>} path='/register' exact />
+            <Route element={<Landing/>} path='/landing' exact />
         </Routes>
       </Router>
     </div>
