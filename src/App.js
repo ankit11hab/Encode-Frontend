@@ -11,6 +11,7 @@ import PaymentHistory from "./pages/payment/PaymentHistory";
 import TicketQR from "./pages/payment/TicketQR";
 import Profile from "./pages/user/Profile";
 import Landing from "./pages/Landing";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {

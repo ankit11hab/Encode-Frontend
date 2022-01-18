@@ -23,3 +23,36 @@ body {
 ::-webkit-scrollbar-thumb{
   background-color: #4539e6;
 }
+
+.Authpage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #acbad6;
+}
+.AuthCard{
+  width: 20rem;
+  height: 20rem;
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.RegCard{
+  width: 20rem;
+  height: 30rem;
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}

@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import logo from '../assets/logo.png';
+import Modal from "react-responsive-modal";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { VscChromeClose } from 'react-icons/vsc';
+import { Button, Modals } from 'react-bootstrap';
+
 export default function Navbar() {
   const [navbarState, setNavbarState] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
   return (
     <>
       <Nav>
@@ -34,7 +38,7 @@ export default function Navbar() {
           </li>
         </ul>
         <div>
-          <button className='login'>Login</button>
+          <button>Login</button>
           <button>Register</button>
         </div>
       </Nav>

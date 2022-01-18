@@ -18,13 +18,31 @@ const Login = (props) => {
     if(props.isAuthenticated&&!props.user.first_name) return <Navigate to='/profile'/>
     if(props.isAuthenticated) return <Navigate to='/dashboard'/>
     return  (
-        <div>
-           <h3>Login</h3> 
+        <div className='Authpage'>
+            <div className='AuthCard'>
+            <form>
+                <h3>Sign In</h3>
+
+                <div className="form-group">
+                    <label>Username</label>
+                    <input type="text" className="form-control" placeholder="Enter email" />
+                </div>
+
+                <div className="form-group">
+                    <label>Password</label>
+                    <input type="password" className="form-control" placeholder="Enter password" />
+                </div>
+
+                <button type="submit" className="btn btn-primary btn-block" style={{margin: '5px'}}>Submit</button>
+            </form>
+            </div>
+            
+           {/* <h3>Login</h3> 
            <form onSubmit={handleLogin}>
                <input type = "text" placeholder="Enter username" name="username"></input>
                <input type = "password" placeholder="Enter password" name="password"></input>
                <button type="submit">Submit</button>
-           </form>
+           </form> */}
         </div>
     )
 }

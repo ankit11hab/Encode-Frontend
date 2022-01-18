@@ -21,16 +21,44 @@ const Register = (props) => {
     }
     if(props.isAuthenticated) return <Navigate to = '/dashboard' /> 
     return  (
-        <div>
-           <h3>Register</h3> 
-           <form onSubmit={handleRegistration}>
-               <input type = "text" placeholder="Enter username" name="username"></input>
-               <input type = "email" placeholder="Enter Email" name="email"></input>
-               <input type = "password" placeholder="Enter Password" name="password"></input>
-               <input type = "password" placeholder="Confirm Password" name="password2"></input>
-               <button type="submit">Submit</button>
-           </form>
+        <div className='Authpage'>
+            <div className='RegCard'>
+            <form>
+                <h3>Register</h3>
+
+                <div className="form-group">
+                    <label>Username</label>
+                    <input type = "text" className="form-control" placeholder="Enter username" name="username"/>
+                </div>
+
+                <div className="form-group">
+                    <label>Email</label>
+                    <input type = "email" className="form-control" placeholder="Enter Email" name="email"/>
+                </div>
+                <div className="form-group">
+                    <label>Password</label>
+                    <input type = "password" className="form-control" placeholder="Enter Password" name="password"/>
+                </div>
+                <div className="form-group">
+                    <label>Confirm Password</label>
+                    <input type = "password" className="form-control" placeholder="Confirm Password" name="password2"/>
+                </div>
+
+                <button type="submit" className="btn btn-primary btn-block" style={{margin: '5px'}}>Submit</button>
+            </form>
+            </div>
+            
         </div>
+        // <div>
+        //    <h3>Register</h3> 
+        //    <form onSubmit={handleRegistration}>
+        //        <input type = "text" placeholder="Enter username" name="username"></input>
+        //        <input type = "email" placeholder="Enter Email" name="email"></input>
+        //        <input type = "password" placeholder="Enter Password" name="password"></input>
+        //        <input type = "password" placeholder="Confirm Password" name="password2"></input>
+        //        <button type="submit">Submit</button>
+        //    </form>
+        // </div>
     )
 }
 
