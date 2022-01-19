@@ -20,20 +20,20 @@ const Login = (props) => {
     return  (
         <div className='Authpage'>
             <div className='AuthCard'>
-            <form>
+            <form onSubmit={handleLogin}>
                 <h3>Sign In</h3>
 
                 <div className="form-group">
                     <label>Username</label>
-                    <input type="text" className="form-control" placeholder="Enter email" />
+                    <input type="text" className="form-control" placeholder="Enter Username" name="username"></input>
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
+                    <input type="password" className="form-control" placeholder="Enter password" name="password"></input>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block" style={{margin: '5px'}}>Submit</button>
+                <button type="submit" className="btn btn-primary btn-block" style={{margin: '5px'}} >Submit</button>
             </form>
             </div>
             

@@ -10,10 +10,12 @@ const Register = (props) => {
     const handleRegistration = async (e) =>{
         e.preventDefault();
         const username = e.target.username.value
+        const first_name = e.target.firstname.value
+        const last_name = e.target.lastname.value
         const email = e.target.email.value
         const password = e.target.password.value
         const password2 = e.target.password2.value
-        const res = await props.registerUser({'username':username,'email':email,'password':password,'password2':password2});
+        const res = await props.registerUser({'username':username,'first_name':first_name,'last_name':last_name,'email':email,'password':password,'password2':password2});
         console.log("res: ",res);
         if(res.status===200)
             navigate('/login');
@@ -23,25 +25,33 @@ const Register = (props) => {
     return  (
         <div className='Authpage'>
             <div className='RegCard'>
-            <form>
+            <form onSubmit={handleRegistration}>
                 <h3>Register</h3>
 
                 <div className="form-group">
                     <label>Username</label>
-                    <input type = "text" className="form-control" placeholder="Enter username" name="username"/>
+                    <input type = "text" className="form-control" placeholder="Enter username" name="username"></input>
+                </div>
+                <div className="form-group">
+                    <label>First Name</label>
+                    <input type = "text" className="form-control" placeholder="Enter username" name="firstname"></input>
+                </div>
+                <div className="form-group">
+                    <label>Last Name</label>
+                    <input type = "text" className="form-control" placeholder="Enter username" name="lastname"></input>
                 </div>
 
                 <div className="form-group">
                     <label>Email</label>
-                    <input type = "email" className="form-control" placeholder="Enter Email" name="email"/>
+                    <input type = "email" className="form-control" placeholder="Enter Email" name="email"></input>
                 </div>
                 <div className="form-group">
                     <label>Password</label>
-                    <input type = "password" className="form-control" placeholder="Enter Password" name="password"/>
+                    <input type = "password" className="form-control" placeholder="Enter Password" name="password"></input>
                 </div>
                 <div className="form-group">
                     <label>Confirm Password</label>
-                    <input type = "password" className="form-control" placeholder="Confirm Password" name="password2"/>
+                    <input type = "password" className="form-control" placeholder="Confirm Password" name="password2"></input>
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block" style={{margin: '5px'}}>Submit</button>
