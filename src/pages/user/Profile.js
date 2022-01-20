@@ -12,6 +12,7 @@ const Profile = (props) => {
         const res = await props.updateProfile({'first_name':first_name,'last_name':last_name,'phone':phone,'is_driver':is_driver});
         console.log(res);
     }
+
     return (
         <div>
             <h3>Profile:</h3>
@@ -22,7 +23,7 @@ const Profile = (props) => {
                <input type = "checkbox" name="is_driver"></input>
                <label>I am a driver</label>
                <button type="submit">Submit</button>
-           </form>
+           </form> 
         </div>
     )
 }
