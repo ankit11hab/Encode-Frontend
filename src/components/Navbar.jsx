@@ -31,15 +31,15 @@ export default function Navbar() {
             <a href='#hero'>Home</a>
           </li>
           <li>
-            <a href='#services'>Services</a>
+            <a href='#dashboard'>Dashboard</a>
           </li>
           <li>
-            <a href='#testimonials'>Testimonials</a>
+            <a href='#profile'>Profile</a>
           </li>
         </ul>
         <div>
-          <button>Login</button>
-          <button>Register</button>
+          <button className='login'>Login</button>
+          <button className='register'>Register</button>
         </div>
       </Nav>
       <ResponsiveNav state={navbarState}>
@@ -67,6 +67,8 @@ export default function Navbar() {
 }
 
 const Nav = styled.nav`
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
