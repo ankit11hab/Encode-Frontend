@@ -150,3 +150,15 @@ export const getPaymentHistory = async (dispatch) => {
     }
 }
 
+export const getPlace= async (latlang,dispatch) => {
+    try {
+        const data = await axios.get(
+            'http://127.0.0.1:8000/geo/decode_latlang/',
+            latlang
+        )
+        return data;
+    }   
+    catch(error) {
+        return {status:false};
+    }
+}
