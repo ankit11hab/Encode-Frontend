@@ -23,15 +23,8 @@ export default function Hero() {
             <label htmlFor=''>Where do you want to go</label>
             <input type='text' placeholder='Search your location' />
           </div>
-          <div className='container'>
-            <label htmlFor=''>Check-in</label>
-            <input type='date' />
-          </div>
-          <div className='container'>
-            <label htmlFor=''>Check-out</label>
-            <input type='date' />
-          </div>
-          <button>Explore Now</button>
+          
+          <button>Search</button>
         </div>
       </div>
     </Section>
@@ -79,6 +72,7 @@ const Section = styled.section`
     }
     .search {
       display: flex;
+      width: 60%;
       background: #ffffffce;
       padding: 0.5rem;
       border-radius: 0.5rem;

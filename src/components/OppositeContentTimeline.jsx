@@ -10,7 +10,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 export default function OppositeContentTimeline() {
   return (
     <React.Fragment>
-      <Timeline position='alternate'>
+      <Timeline className='positionLeft'>
         <TimelineItem>
           <TimelineOppositeContent color='text.secondary'>
             09:30 am
@@ -19,7 +19,7 @@ export default function OppositeContentTimeline() {
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Eat</TimelineContent>
+          <TimelineContent>Delhi</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent color='text.secondary'>
@@ -29,7 +29,7 @@ export default function OppositeContentTimeline() {
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Code</TimelineContent>
+          <TimelineContent>Ghaziabad</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent color='text.secondary'>
@@ -39,17 +39,17 @@ export default function OppositeContentTimeline() {
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Sleep</TimelineContent>
+          <TimelineContent>Meerut</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent color='text.secondary'>
-            9:00 am
+            3:00 pm
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Repeat</TimelineContent>
+          <TimelineContent>Lucknow</TimelineContent>
         </TimelineItem>
       </Timeline>
     </React.Fragment>
