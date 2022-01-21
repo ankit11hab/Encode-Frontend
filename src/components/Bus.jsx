@@ -3,7 +3,9 @@ import { useState } from 'react';
 
 function Bus({ data }) {
   const [toggle, setToggle] = useState(false);
+  console.log("Hello");
   console.log(data);
+  console.log("HI");
   // let  = {
   //     travel_name : "Fexi Ticket National travels.",
   //       bus_name : "Bharat Benz A/C Sleeper(2 + 2)",
@@ -106,6 +108,7 @@ function Bus({ data }) {
     border: 1px solid black;
     // height: 200px;
   `;
+  console.log(data);
   return (
     <Main_container>
       <Container>

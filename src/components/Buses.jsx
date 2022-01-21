@@ -233,7 +233,7 @@ export default function Buses() {
   var BUS_JS = All_bus.filter(
     (item) => from === item.pickup_address || to === item.drop_address
   );
-
+    console.log(BUS_JS);
   const [buses, setBuses] = useState(BUS_JS);
 
   var original = BUS_JS;
@@ -833,7 +833,7 @@ export default function Buses() {
                       src='https://image.flaticon.com/icons/png/512/124/124992.png'
                       alt=''
                     />{' '}
-                    Emergrncy Contact Number
+                    Emergency Contact Number
                   </div>
                 </div>
                 <br />
@@ -866,7 +866,6 @@ export default function Buses() {
         </Filter_container>
         <Available_bus_container>
           <Sort_div>
-            <div>{buses.length} Bus found</div>
             <div style={{ fontWeight: 'bold' }}>Sort by :</div>
             <div>Departure</div>
             <div>Duration</div>
@@ -883,7 +882,7 @@ export default function Buses() {
               top: '0',
             }}
           >
-            {buses.map((e) => (
+            {All_bus.map((e) => (
               <Bus key={e._id} data={e}></Bus>
             ))}
           </div>
