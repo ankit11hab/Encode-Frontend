@@ -23,14 +23,15 @@ const Dashboard = (props) => {
         )
         console.log(data);
         setNotes(data.data)
+        const location=navigator.geolocation.getCurrentPosition()
+        const place = await axios.post(
+            'http://127.0.0.1:8000/geo/decode_latlang/',
+            {'lat':location.latitude,'lng':location.longitude},{headers: {"Content-Type": "application/json"}}
+        )
+        console.log(place);
     }, [])
     {/*get the current location of the userfrom navigator and store it in a object*/}
-    const [location,setLocation] = useState(navigator.geolocation.getCurrentPosition(position => {
-        this.setState({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        })
-    }))
+    
     
     return (
         <div>
