@@ -12,11 +12,11 @@ export default function Footer() {
           <a href='#hero'>Home</a>
         </li>
         <li>
-          <a href='#services'>Services</a>
+          <a href='#dashboard'>Dashboard</a>
         </li>
 
         <li>
-          <a href='#testimonials'>Testimonials</a>
+          <a href='#profile'>Profile</a>
         </li>
       </ul>
       <ul className='social__links'>

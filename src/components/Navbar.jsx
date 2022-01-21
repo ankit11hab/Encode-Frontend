@@ -50,14 +50,14 @@ export default function Navbar() {
             </a>
           </li>
           <li>
-            <a href='#services' onClick={() => setNavbarState(false)}>
-              Services
+            <a href='#dashboard' onClick={() => setNavbarState(false)}>
+              Dashboard
             </a>
           </li>
 
           <li>
-            <a href='#testimonials' onClick={() => setNavbarState(false)}>
-              Testimonials
+            <a href='#profile' onClick={() => setNavbarState(false)}>
+              Profile
             </a>
           </li>
         </ul>

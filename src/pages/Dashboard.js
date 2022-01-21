@@ -9,6 +9,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import styled from 'styled-components';  
+import TravelHistory from '../components/TravelHistory';
+import Footer from '../components/Footer';
 const Dashboard = (props) => {
     const [notes,setNotes] = useState([])
     useEffect(async () => {
@@ -85,9 +87,10 @@ const Dashboard = (props) => {
             })}
         </div>
         <div style={{marginTop:'30px', marginLeft:'20px'}}>
-            <h3>Travel History</h3>
+            
+            <TravelHistory/>
         </div>
-
+            <Footer/>
     </div>
     )
 }

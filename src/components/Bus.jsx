@@ -3,9 +3,7 @@ import { useState } from 'react';
 
 function Bus({ data }) {
   const [toggle, setToggle] = useState(false);
-  console.log("Hello");
-  console.log(data);
-  console.log("HI");
+
   // let  = {
   //     travel_name : "Fexi Ticket National travels.",
   //       bus_name : "Bharat Benz A/C Sleeper(2 + 2)",
@@ -30,11 +28,13 @@ function Bus({ data }) {
     width: 100%;
     height: 200px;
     border: 1px solid gray;
+    border-radius: 0.5rem;
     display: grid;
     // grid-template-rows: 80% 20%;
     :hover {
-      box-shadow: 0 0px 10px orange;
+      box-shadow: 0 0px 10px #48cae4;
     }
+    background: aliceblue;
   `;
   const Container = styled.div`
     // border: 1px solid black;
@@ -95,7 +95,7 @@ function Bus({ data }) {
   `;
   const Toggle_button = styled.button`
     float: right;
-    background-color: tomato;
+    background-color: #4361ee;
     color: white;
     padding: 5px;
     text-align: center;

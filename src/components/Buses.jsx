@@ -396,13 +396,12 @@ export default function Buses() {
     // height: 1000px;
     display: grid;
     grid-template-columns: 25% 70%;
-    border: 1px solid black;
     grid-gap: 3%;
   `;
   const Filter_container = styled.div`
     width: 100%;
-    border: 1px solid black;
     // height: 1000px;
+
   `;
   const Available_bus_container = styled.div`
     // border: 1px solid black;
@@ -418,9 +417,11 @@ export default function Buses() {
     width: 100%;
     height: 50px;
     border: 1px solid black;
+    border-radius: 5px;
     display: grid;
     grid-template-columns: 18% 10% 10% 10% 10% 10% 10% 10%;
     grid-gap: 10px;
+    background-color: aliceblue;
   `;
   
     return (
@@ -867,10 +868,11 @@ export default function Buses() {
         <Available_bus_container>
           <Sort_div>
             <div style={{ fontWeight: 'bold' }}>Sort by :</div>
+            <br />
             <div>Departure</div>
             <div>Duration</div>
             <div>Arrival</div>
-            <div>Ratings</div>+<div>Fare</div>
+            <div>Ratings</div><div>Fare</div>
             <div>Seats available</div>
           </Sort_div>
           <div
