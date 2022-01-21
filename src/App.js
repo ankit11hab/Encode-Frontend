@@ -11,6 +11,7 @@ import PaymentHistory from "./pages/payment/PaymentHistory";
 import TicketQR from "./pages/payment/TicketQR";
 import Profile from "./pages/user/Profile";
 import Landing from "./pages/Landing";
+import SearchBus from "./pages/SearchBus";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -30,6 +31,7 @@ function App() {
             <Route element={<Login/>} path='/login' exact />
             <Route element={<Register/>} path='/register' exact />
             <Route element={<Landing/>} path='/landing' exact />
+            <Route element={<SearchBus/>} path='/buses' exact />
         </Routes>
       </Router>
     </div>
