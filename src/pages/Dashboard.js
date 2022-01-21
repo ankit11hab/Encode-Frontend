@@ -8,19 +8,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import styled from 'styled-components';
-function generate(element) {
-    return [0, 1, 2].map((value) =>
-      React.cloneElement(element, {
-        key: value,
-      }),
-    );
-  }
-  
-const Demo = styled('div')(({ theme }) => ({
-    backgroundColor: theme.palette.background.paper,
-  }));
-  
+import styled from 'styled-components';  
 const Dashboard = (props) => {
     const [notes,setNotes] = useState([])
     useEffect(async () => {
@@ -98,27 +86,7 @@ const Dashboard = (props) => {
         <div style={{marginTop:'30px', marginLeft:'20px'}}>
             <h3>Travel History</h3>
         </div>
-        <div>
-        <Grid item xs={12} md={6}>
-          <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-            Icon with text
-          </Typography>
-          <Demo>
-            <List>
-              {generate(
-                <ListItem>
-                  <ListItemIcon>
-                  </ListItemIcon>
-                  <ListItemText
-                    primary="Single-line item"
-                    secondary= 'Secondary text'
-                  />
-                </ListItem>,
-              )}
-            </List>
-          </Demo>
-        </Grid>
-        </div>
+
     </div>
     )
 }
