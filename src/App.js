@@ -16,24 +16,8 @@ import SelectedBus from "./pages/SelectedBus";
 import Driver from "./pages/Driver";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-// navigator.geolocation.getCurrentPosition(function(position) {
-//   const lat = position.coords.latitude;
-//   const lng = position.coords.longitude;
-//   function handleClick() {
-  
-//   // Send data to the backend via POST
-//   fetch('http://localhost:8000/geo/decode_latlang', {  // Enter your IP address here
 
-//     method: 'POST', 
-//     mode: 'cors', 
-//     body: JSON.stringify(lat,lng) // body data type must match "Content-Type" header
-
-//   })
-  
-// }
-// });
 function App() {
-  
   return(
     <div>
       <Router>
