@@ -6,7 +6,7 @@ export default function TravelHistory() {
   return (
     <Section id='testimonials'>
       <div className='title'>
-        <h2>Travel History</h2>
+        <h2 style={{fontFamily:"Dongle", fontSize:"50px"}}>Travel History</h2>
       </div>
       <div className='testimonials'>
         <div className='testimonial'>

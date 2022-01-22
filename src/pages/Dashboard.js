@@ -11,6 +11,7 @@ import ListItemText from '@mui/material/ListItemText';
 import styled from 'styled-components';  
 import TravelHistory from '../components/TravelHistory';
 import Footer from '../components/Footer';
+import '../css/dashboard.css';
 const Dashboard = (props) => {
     const [notes,setNotes] = useState([])
     useEffect(async () => {
@@ -32,59 +33,25 @@ const Dashboard = (props) => {
         )
         console.log(place);
     }, [])
-    {/*get the current location of the userfrom navigator and store it in a object*/}
+    {/*get the current loclinear-gradient(to right, #001896, #060049)ation of the userfrom navigator and store it in a object*/}
     
     
     return (
         <div>
-        <div style={{display: 'flex', alignItem: 'center',width:'100%'}} >
-            <Card sx={{ width: '70%',display:'block'}} style={{background: 'linear-gradient(to right, #001896, #060049)'}}>
-                <CardContent sx={{ flex: '1 0 auto' }} >
-                    <Typography component="div" variant="h5" style={{color:'white', marginBottom: '20px'}}>
-                        Welcome {props.user.first_name} {props.user.last_name}
-                    </Typography>
-                    <div style={{color:'white'}}>
-                        Right Now I am travelling as: <br />
-                        Passenger
-                        <Switch defaultChecked />
-                        Driver
-                    </div>
-                    <TextField fullWidth label="fullWidth" id="fullWidth" sx={{bgcolor:'white'}} /> <br />
-                </CardContent>
-                <CardActions>
-                
-                </CardActions>
-            </Card>
-            <Card sx={{ display: 'flex',justifyContent: 'space-between' }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                    <CardContent sx={{ flex: '1 0 auto' }}>
-                    <Typography variant="h6" component="div">
-                        Set your precise location
-                    </Typography>
-                    <Typography variant="subtitle1" color="text.secondary" component="div">
-                        Update your location and get the bus service at your convinience
-                    </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="large">Learn More</Button>
-                </CardActions>
-                    
-                </Box>
-                <CardMedia
-                    component="img"
-                    sx={{ width: 300 }}
-                    image= {house}
-                    alt="house"
-                />
-            </Card>
-            {/* <p>Welcome { props.user.username }!</p>
-            <h4>Role: {props.user.isDriver?'Driver':'Passenger'}</h4>*/}
-            {notes.map((note)=>{ 
-                console.log(note)
-                return(
-                    <div key = {note.id}>{note.body}</div>
-                )
-            })}
+        <div container style={{minHeight:"370px",background:"linear-gradient(to right, #00147B, #050041)"}}>
+            <div item style={{textAlign:"center", color:"white",fontSize:"50px",fontFamily:"Dongle",paddingTop:"20px"}}>
+                Welcome Your Name!
+            </div>
+            <div item style={{textAlign:"center", color:"#E2E2E2",fontSize:"35px",fontFamily:"Dongle",paddingTop:"20px",transform:"translate(0,-45px)"}}>
+                Your current location should be shown here
+            </div>
+            <div item style={{textAlign:"center", color:"rgb(199, 199, 199)",fontSize:"27px",fontFamily:"Dongle",paddingTop:"20px",transform:"translate(0,0px)"}}>
+                Search for your destination point!
+            </div>
+            <div style={{textAlign:"center",paddingTop:"10px"}}>
+                <input type = "text" style={{textAlign:"center",background:"transparent",border:"1px solid #00D1FF", width:"550px",height:"45px",borderRadius:"22px",color:"white",outline:"1px solid #00D1FF"}} placeholder='Where do you want to go today?' />
+            </div>
+            
         </div>
         <div style={{marginTop:'30px', marginLeft:'20px'}}>
             

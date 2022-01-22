@@ -13,10 +13,6 @@ export default function Navbar() {
     <>
       <Nav>
         <div className='brand'>
-          <div className='container'>
-            <img src={logo} alt='' />
-            BusEncode
-          </div>
           <div className='toggle'>
             {navbarState ? (
               <VscChromeClose onClick={() => setNavbarState(false)} />
@@ -25,53 +21,22 @@ export default function Navbar() {
             )}
           </div>
         </div>
-
-        <ul>
-          <li>
-            <a href='#hero'>Home</a>
-          </li>
-          <li>
-            <a href='#dashboard'>Dashboard</a>
-          </li>
-          <li>
-            <a href='#profile'>Profile</a>
-          </li>
-        </ul>
         <div>
-          <button className='login'>Login</button>
-          <button className='register'>Register</button>
+          <a href='#login' style={{color:"white"}}>Login/Logout</a>
+          <a href='#login' style={{color:"white"}}>Register</a>
         </div>
       </Nav>
-      <ResponsiveNav state={navbarState}>
-        <ul>
-          <li>
-            <a href='#hero' onClick={() => setNavbarState(false)}>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href='#dashboard' onClick={() => setNavbarState(false)}>
-              Dashboard
-            </a>
-          </li>
-
-          <li>
-            <a href='#profile' onClick={() => setNavbarState(false)}>
-              Profile
-            </a>
-          </li>
-        </ul>
-      </ResponsiveNav>
     </>
   );
 }
 
 const Nav = styled.nav`
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 3px;
+  padding-bottom: 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background:linear-gradient(to right, #00147B, #050041);
   .brand {
     .container {
       cursor: pointer;
