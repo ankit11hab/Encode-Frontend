@@ -1,0 +1,4 @@
+input[type="textfield"]::placeholder {
+    color: rgb(189, 189, 189);
+    text-align: center
+}

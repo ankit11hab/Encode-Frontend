@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import TravelHistory from '../components/TravelHistory';
 import Footer from '../components/Footer';
 import '../css/dashboard.css';
+import '../css/driver.css';
 const Dashboard = () => {
   return (
     <div>
@@ -61,28 +62,42 @@ const Dashboard = () => {
           justifyContent: 'center',
         }}
       >
-        <div
-          style={{
-            border: 'solid 1px black',
-            borderRadius: '20px',
-            padding: '10px 30px',
-            cursor: 'pointer',
-          }}
-        >
-          Exp Time
+        <div>
+          <input
+            style={{
+              borderRadius: '15px',
+              borderWidth: '1px',
+              padding: '5px 8px',
+              width: '150px',
+            }}
+            type='textfield'
+            id='html'
+            name='fav_language'
+            placeholder='Exp. Time'
+          />
         </div>
-        <div style={{margin: '0 15px'}}>
-          <input style={{cursor:'pointer'}} type='radio' id='html' name='fav_language' value='HTML' />
+        <div style={{ margin: '0 15px' }}>
+          <input
+            style={{ cursor: 'pointer' }}
+            type='radio'
+            id='html'
+            name='fav_language'
+            value='HTML'
+          />
         </div>
-        <div
-          style={{
-            border: 'solid 1px black',
-            borderRadius: '20px',
-            padding: '10px 30px',
-            cursor: 'pointer',
-          }}
-        >
-          Location
+        <div>
+          <input
+            style={{
+              borderRadius: '15px',
+              borderWidth: '1px',
+              padding: '5px 8px',
+              width: '150px',
+            }}
+            type='textfield'
+            id='html'
+            name='fav_language'
+            placeholder='Location'
+          />
         </div>
       </div>
       <Footer />
