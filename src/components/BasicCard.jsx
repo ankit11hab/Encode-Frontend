@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import styled from 'styled-components';   
-
+import { Link } from 'react-router-dom';
 const bull = (
   <Box
     component='span'
@@ -33,7 +33,9 @@ export default function BasicCard() {
         </Typography>
       </CardContent>
       <CardActions>
+        <Link to='/purchase'>
         <Button size='small'>Proceed to Pay</Button>
+        </Link>
       </CardActions>
     </Card>
   );

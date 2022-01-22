@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './searchBuses.css';
 import { Bus } from './Bus';
 
-import { useLocation } from 'react-router-dom';
+import { useLocation,Link } from 'react-router-dom';
 
 export default function Buses() {
   const All_bus = [

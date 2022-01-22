@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import axios from 'axios'
 import {Card,Box,Typography,CardContent,CardMedia,CardActions,Button,TextField, Switch,Grid} from '@mui/material';
 import house from '../assets/home.jpg'
@@ -12,9 +13,12 @@ import styled from 'styled-components';
 import TravelHistory from '../components/TravelHistory';
 import Footer from '../components/Footer';
 import '../css/dashboard.css';
+import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 const Dashboard = (props) => {
     const [notes,setNotes] = useState([])
     const [loc,setLoc]=useState({})
+    const [value, setValue] = useState(null);
+
     useEffect(async () => {
         const config = {
             headers: {
@@ -32,12 +36,12 @@ const Dashboard = (props) => {
             const lng = position.coords.longitude;
             const location={'lat':lat,'lng':lng}
             console.log(location);
-            const place= await axios.post(
-                'http://localhost:8000/geo/decode_latlang/',
-                location
-            )
-            console.log(place);
-            setLoc(place.data)
+            // const place= await axios.post(
+            //     'http://localhost:8000/geo/decode_latlang/',
+            //     location
+            // )
+            // console.log(place);
+            // setLoc(place.data)
           });
     }, [])
     {/*get the current loclinear-gradient(to right, #001896, #060049)ation of the userfrom navigator and store it in a object*/}
@@ -49,13 +53,22 @@ const Dashboard = (props) => {
                 {props.user.first_name} {props.user.last_name}
             </div>
             <div item style={{textAlign:"center", color:"#E2E2E2",fontSize:"35px",fontFamily:"Dongle",paddingTop:"20px",transform:"translate(0,-45px)"}}>
-                {loc.plus_code.compound_code}
+                {/* {loc.plus_code.compound_code} */}
             </div>
             <div item style={{textAlign:"center", color:"rgb(199, 199, 199)",fontSize:"27px",fontFamily:"Dongle",paddingTop:"20px",transform:"translate(0,0px)"}}>
                 Search for your destination point!
             </div>
             <div style={{textAlign:"center",paddingTop:"10px"}}>
-                <input type = "text" style={{textAlign:"center",background:"transparent",border:"1px solid #00D1FF", width:"550px",height:"45px",borderRadius:"22px",color:"white",outline:"1px solid #00D1FF"}} placeholder='Where do you want to go today?' />
+                {/* <input type = "text" style={{textAlign:"center",background:"transparent",border:"1px solid #00D1FF", width:"550px",height:"45px",borderRadius:"22px",color:"white",outline:"1px solid #00D1FF"}} placeholder='Where do you want to go today?' /> */}
+                <GooglePlacesAutocomplete
+                 apiKey="AIzaSyC3Ml4YLtU58N72tqHQVDzM37r61vdbZWY"
+                 selectProps={{
+                    value,
+                    onChange: setValue,
+                  }}/>
+                  <Link to ="/buses">
+                      <button style={{margin:'10px',borderRadius:'5px',width:'100px',height:'40px'}}>Submit</button>
+                    </Link>
             </div>
             
         </div>

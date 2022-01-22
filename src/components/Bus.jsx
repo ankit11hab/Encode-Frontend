@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 function Bus({ data }) {
   const [toggle, setToggle] = useState(false);
 
@@ -150,6 +150,7 @@ function Bus({ data }) {
           Seats available
         </Seat_container>
       </Container>
+      <Link to='/selectedbus'>
       <ViewSeat_btn>
         <Span style={{}}>
           Amenities | Boarding and Dropping Points | Reviews | Booking Policies |{' '}
@@ -158,7 +159,7 @@ function Bus({ data }) {
           View Seats
         </Toggle_button>
       </ViewSeat_btn>
-      
+      </Link>
     </Main_container>
   );
 }

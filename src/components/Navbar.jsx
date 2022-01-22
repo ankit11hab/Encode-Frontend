@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import logo from '../assets/logo.png';
 import Modal from "react-responsive-modal";
@@ -6,9 +8,13 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { VscChromeClose } from 'react-icons/vsc';
 import { Button, Modals } from 'react-bootstrap';
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [navbarState, setNavbarState] = useState(false);
   const [modalShow, setModalShow] = useState(false);
+  const dispatch = useDispatch();
+    const handleLogout = () => {
+        dispatch({type:'LOGOUT_USER'});
+    }
   return (
     <>
       <Nav>
@@ -22,12 +28,19 @@ export default function Navbar() {
           </div>
         </div>
         <div>
-          <a href='#login' style={{color:"white"}}>Login/Logout</a>
-          <a href='#login' style={{color:"white"}}>Register</a>
+        {props.isAuthenticated?<button style={{margin:'10px',borderRadius:'5px',width:'100px',height:'40px'}} onClick={handleLogout}>Logout</button>:<><Link to = '/login' ><button style={{margin:'10px',borderRadius:'5px',width:'100px',height:'40px'}}>Login</button ></Link> | <Link to = '/register'><button style={{margin:'10px',borderRadius:'5px',width:'100px',height:'40px',padding:'2px'}}>Register</button></Link></>}
+          {/* <a href='#login' style={{color:"white"}}>Login/Logout</a>
+          <a href='#login' style={{color:"white"}}>Register</a> */}
         </div>
       </Nav>
     </>
   );
+}
+const mapStateToProps = (state) => {
+  return {
+      isAuthenticated: state.isAuthenticated,
+      user: state.user
+  }
 }
 
 const Nav = styled.nav`
