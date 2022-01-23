@@ -119,24 +119,11 @@ const Payment = (props) => {
                 margin: '2rem auto',
               }}
             >
-              <label htmlFor=''>Name: </label>
-              <input
-                type='text'
-                placeholder='Enter your name'
-                name='name'
-              ></input>
-              <br />
-              <label htmlFor=''>Amount to be paid: </label>
-              <input
-                type='text'
-                placeholder='Enter amount to pay'
-                name='amount'
-              ></input>
-              <br />
-
+              
               <button
                 onClick={displayRazorpay}
                 style={{
+					width:'150px',
                   borderRadius: '5px',
                   backgroundColor: '#00147B',
                   color: 'white',
