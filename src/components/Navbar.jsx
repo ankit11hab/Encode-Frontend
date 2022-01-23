@@ -8,7 +8,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { VscChromeClose } from 'react-icons/vsc';
 import { Button, Modals } from 'react-bootstrap';
 
-export default function Navbar(props) {
+const Navbar = (props) => {
   const [navbarState, setNavbarState] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const dispatch = useDispatch();
@@ -42,6 +42,7 @@ const mapStateToProps = (state) => {
       user: state.user
   }
 }
+export default connect(mapStateToProps)(Navbar)
 
 const Nav = styled.nav`
   padding-top: 3px;

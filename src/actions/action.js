@@ -68,6 +68,7 @@ export const loginUser = async (loginData,dispatch) => {
         )
         if(data.status===200)
         {
+            console.log("Ok");
             dispatch({
                 type:'LOGIN_USER',
                 user: jwt_decode(data.data.access)
