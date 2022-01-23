@@ -25,11 +25,11 @@ export default function BasicCard() {
         </Typography>
         <br />
         <Typography variant='h5' component='div'>
-          Number of seats selected: 3
+          Number of seats selected: 1
         </Typography>
         <br />
         <Typography variant='h5' component='div'>
-          Price: 150
+          Price: 10
         </Typography>
       </CardContent>
       <CardActions>

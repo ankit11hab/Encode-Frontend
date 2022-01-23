@@ -19,37 +19,37 @@ export default function OppositeContentTimeline() {
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
+          <TimelineContent>Mumbai</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent color='text.secondary'>
+            12:00 pm
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>Ahmedabad</TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent color='text.secondary'>
+            10:00pm
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
           <TimelineContent>Delhi</TimelineContent>
         </TimelineItem>
         <TimelineItem>
           <TimelineOppositeContent color='text.secondary'>
-            10:00 am
+            1:00pm
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Ghaziabad</TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent color='text.secondary'>
-            12:00 am
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>Meerut</TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent color='text.secondary'>
-            3:00 pm
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>Lucknow</TimelineContent>
+          <TimelineContent>Guwahati</TimelineContent>
         </TimelineItem>
       </Timeline>
     </React.Fragment>
