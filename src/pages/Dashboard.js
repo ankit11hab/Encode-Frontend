@@ -18,7 +18,7 @@ import Services from '../components/Services';
 
 const Dashboard = (props) => {
     const [notes,setNotes] = useState([])
-    const [loc,setLoc]=useState({})
+    const [loc,setLoc]=useState({"plus_code":{"compound_code":"","global_code":""},})
     const [value, setValue] = useState(null);
 
     useEffect(async () => {
@@ -38,12 +38,12 @@ const Dashboard = (props) => {
             const lng = position.coords.longitude;
             const location={'lat':lat,'lng':lng}
             console.log(location);
-            // const place= await axios.post(
-            //     'http://localhost:8000/geo/decode_latlang/',
-            //     location
-            // )
-            // console.log(place);
-            // setLoc(place.data)
+            const place= await axios.post(
+                'http://localhost:8000/geo/decode_latlang/',
+                location
+            )
+            console.log(place);
+            setLoc(place.data)
           });
     }, [])
     {/*get the current loclinear-gradient(to right, #001896, #060049)ation of the userfrom navigator and store it in a object*/}
@@ -55,7 +55,7 @@ const Dashboard = (props) => {
                 {props.user.first_name} {props.user.last_name}
             </div>
             <div item style={{textAlign:"center", color:"#E2E2E2",fontSize:"35px",fontFamily:"Dongle",paddingTop:"20px",transform:"translate(0,-45px)"}}>
-                {/* {loc.plus_code.compound_code} */}
+                {loc.plus_code.compound_code}
             </div>
             <div item style={{textAlign:"center", color:"rgb(199, 199, 199)",fontSize:"27px",fontFamily:"Dongle",paddingTop:"20px",transform:"translate(0,0px)"}}>
                 Search for your destination point!
