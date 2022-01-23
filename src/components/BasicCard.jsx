@@ -18,10 +18,10 @@ const bull = (
 
 export default function BasicCard() {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 350, mr: 30 }}>
       <CardContent>
         <Typography variant='h5' component='div'>
-          Number of seats available: 10
+          Number of seats available: 34
         </Typography>
         <br />
         <Typography variant='h5' component='div'>
@@ -34,7 +34,12 @@ export default function BasicCard() {
       </CardContent>
       <CardActions>
         <Link to='/purchase'>
-        <Button size='small'>Proceed to Pay</Button>
+          <button
+            style={{ borderRadius: '5px', padding: '10px' }}
+            size='small'
+          >
+            Proceed to Pay
+          </button>
         </Link>
       </CardActions>
     </Card>
