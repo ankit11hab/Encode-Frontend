@@ -42,6 +42,7 @@ function App() {
             <Route exact path='/' element={<PrivateRoute/>}>
               <Route element={<Profile/>} path='/profile' exact />
               <Route element={<Dashboard/>} path='/' exact />
+              <Route element={<Dashboard/>} path='/dashboard' exact />
               <Route element={<Payment/>} path='/purchase' exact />
               <Route element={<PaymentHistory/>} path='/purchase/history' exact />
               <Route element={<TicketQR/>} path='/purchase/ticket' exact />
