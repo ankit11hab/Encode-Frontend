@@ -58,7 +58,7 @@ const Dashboard = (props) => {
             <div item style={{textAlign:"center", color:"rgb(199, 199, 199)",fontSize:"27px",fontFamily:"Dongle",paddingTop:"20px",transform:"translate(0,0px)"}}>
                 Search for your destination point!
             </div>
-            <div style={{textAlign:"center",paddingTop:"10px"}}>
+            <div style={{textAlign:"center",paddingTop:"10px", width:"500px", margin:"0 auto"}}>
                 {/* <input type = "text" style={{textAlign:"center",background:"transparent",border:"1px solid #00D1FF", width:"550px",height:"45px",borderRadius:"22px",color:"white",outline:"1px solid #00D1FF"}} placeholder='Where do you want to go today?' /> */}
                 <GooglePlacesAutocomplete
                  apiKey="AIzaSyC3Ml4YLtU58N72tqHQVDzM37r61vdbZWY"
