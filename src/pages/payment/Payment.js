@@ -159,17 +159,6 @@ const Payment = (props) => {
 
           <Footer />
         </div>
-        <h3>Purchase</h3>
-        <form onSubmit={handlePayment}>
-          <input type='text' placeholder='Enter your name' name='name'></input>
-          <input
-            type='text'
-            placeholder='Enter amount to pay'
-            name='amount'
-          ></input>
-          <button type='submit'>Submit</button>
-        </form>
-        <button onClick={displayRazorpay}>Pay here</button>
       </div>
     );
 }

@@ -14,6 +14,8 @@ import TravelHistory from '../components/TravelHistory';
 import Footer from '../components/Footer';
 import '../css/dashboard.css';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+import Services from '../components/Services';
+
 const Dashboard = (props) => {
     const [notes,setNotes] = useState([])
     const [loc,setLoc]=useState({})
@@ -72,7 +74,10 @@ const Dashboard = (props) => {
             </div>
             
         </div>
-        <div style={{marginTop:'30px', marginLeft:'20px'}}>
+        <div>
+            <Services/>
+        </div>
+        <div style={{ marginLeft:'20px'}}>
             
             <TravelHistory/>
         </div>
