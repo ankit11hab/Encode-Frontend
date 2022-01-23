@@ -100,21 +100,9 @@ const Payment = (props) => {
                 transform: 'translate(0,-45px)',
               }}
             >
-              Hello
+              To book a ride, please pay the amount!
             </div>
-            <div
-              item
-              style={{
-                textAlign: 'center',
-                color: 'rgb(199, 199, 199)',
-                fontSize: '27px',
-                fontFamily: 'Dongle',
-                paddingTop: '20px',
-                transform: 'translate(0,0px)',
-              }}
-            >
-              Update Profile!
-            </div>
+           
           </div>
           <div
             style={{
@@ -149,7 +137,7 @@ const Payment = (props) => {
 
               <button
                 onClick={displayRazorpay}
-                style={{ borderRadius: '5px' }}
+                style={{ borderRadius: '5px', backgroundColor: '#00147B', color: 'white', fontSize: '30px', fontFamily: 'Dongle', marginTop: '10px' }}
                 type='submit'
               >
                 Pay Now
