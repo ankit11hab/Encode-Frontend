@@ -23,7 +23,7 @@ const __DEV__ = document.domain === 'localhost'
 const Payment = (props) => {
 
     const [orderid,setOrderid] = useState();
-    const [finalAmount,setfinalAmount] = useState();
+    const [finalAmount,setfinalAmount] = useState(1000);
     const [name, setName] = useState('Mehul')
 
 	async function displayRazorpay() {
@@ -120,20 +120,7 @@ const Payment = (props) => {
                 margin: '2rem auto',
               }}
             >
-              <label htmlFor=''>Name: </label>
-              <input
-                type='text'
-                placeholder='Enter your name'
-                name='name'
-              ></input>
-              <br />
-              <label htmlFor=''>Amount to be paid: </label>
-              <input
-                type='text'
-                placeholder='Enter amount to pay'
-                name='amount'
-              ></input>
-              <br />
+              
 
               <button
                 onClick={displayRazorpay}
