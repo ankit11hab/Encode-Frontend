@@ -108,7 +108,6 @@ function Bus({ data }) {
     border: 1px solid black;
     // height: 200px;
   `;
-  console.log(data);
   return (
     <Main_container>
       <Container>

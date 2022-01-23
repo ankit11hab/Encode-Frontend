@@ -1,11 +1,27 @@
 import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 import './searchBuses.css';
+import axios from 'axios'
 import { Bus } from './Bus';
 
 import { useLocation,Link } from 'react-router-dom';
 
-export default function Buses() {
+export default function Buses(props) {
+
+  useEffect(async() => {
+    const config = {
+        headers: {
+            'Authorization': `Bearer ${JSON.parse(localStorage.getItem('authTokens')).access}`
+        }
+    }
+    const data = await axios.post(
+        'http://localhost:8000/driver/get/buses/',
+        {place_id:props.place_id},
+        config,
+    );
+    console.log(data);
+  }, []);
+  
   const All_bus = [
     {
       _id: '618b660ca17ac455f40e10ef',
@@ -233,7 +249,6 @@ export default function Buses() {
   var BUS_JS = All_bus.filter(
     (item) => from === item.pickup_address || to === item.drop_address
   );
-    console.log(BUS_JS);
   const [buses, setBuses] = useState(BUS_JS);
 
   var original = BUS_JS;

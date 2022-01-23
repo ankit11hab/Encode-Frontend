@@ -19,7 +19,7 @@ import Services from '../components/Services';
 const Dashboard = (props) => {
     const [notes,setNotes] = useState([])
     const [loc,setLoc]=useState({"plus_code":{"compound_code":"","global_code":""},})
-    const [value, setValue] = useState(null);
+    const [value, setValue] = useState({value:{place_id:""}});
 
     useEffect(async () => {
         const config = {
@@ -66,9 +66,9 @@ const Dashboard = (props) => {
                  apiKey="AIzaSyC3Ml4YLtU58N72tqHQVDzM37r61vdbZWY"
                  selectProps={{
                     value,
-                    onChange: setValue,
+                    onChange: (value)=>{setValue(value);console.log(value.value.place_id)},
                   }}/>
-                  <Link to ="/buses">
+                  <Link to ={{ pathname: `/buses/${value.value.place_id}` }}>
                       <button style={{margin:'10px',borderRadius:'5px',width:'100px',height:'40px'}}>Submit</button>
                     </Link>
             </div>
